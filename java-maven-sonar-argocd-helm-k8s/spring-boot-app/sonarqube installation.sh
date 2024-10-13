@@ -9,7 +9,7 @@ sudo cp /etc/sysctl.conf /root/sysctl.conf_backup
     ulimit -u 4096
 EOF'
     sudo apt update -y
-    sudo apt-get install openjdk-11-jdk -y
+    sudo apt-get install openjdk-17-jdk -y
 
 # Postgres Database installation and setup
     wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
@@ -29,10 +29,10 @@ EOF'
 # Sonarqube installation and setup
     sudo mkdir /sonarqube/
     cd /sonarqube/
-    sudo curl -O https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.3.0.34182.zip
+    sudo curl -O https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.7.0.96327.zip
     sudo apt-get install zip -y
-    sudo unzip -o sonarqube-8.3.0.34182.zip -d /opt/
-    sudo mv /opt/sonarqube-8.3.0.34182/ /opt/sonarqube
+    sudo unzip -o sonarqube-10.7.0.96327.zip -d /opt/
+    sudo mv /opt/sonarqube-10.7.0.96327/ /opt/sonarqube
     sudo groupadd sonar
     sudo useradd -c "SonarQube - User" -d /opt/sonarqube/ -g sonar sonar
 
